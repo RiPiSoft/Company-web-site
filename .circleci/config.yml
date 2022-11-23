@@ -17,8 +17,7 @@ jobs:
     executor: node-executor
     steps:
       - *attach_workspace
-      - checkout:
-          path: ~/ng-project
+      - checkout
       - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
