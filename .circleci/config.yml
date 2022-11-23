@@ -40,20 +40,20 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
-    Linting:
-      executor: node-executor
-      steps:
-        - *attach_workspace
-        - run: 
+  Linting:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run: 
           name: Linting
           command: npm run lint
-    Test:
-      executor: node-executor
-      steps:
-        - *attach_workspace
-        - run: 
-            name: Testing
-            command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-        - run: 
-            name: End to End Test
-            command: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+  Test:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run: 
+          name: Testing
+          command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: 
+          name: End to End Test
+          command: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
