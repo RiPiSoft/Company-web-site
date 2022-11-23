@@ -2,21 +2,21 @@ version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.2.3
 
-# references:
-#   workspace_root: &workspace_root "~"
-#   attach_workspace: &attach_workspace
-#     attach_workspace:
-#       at: *workspace_root
+references:
+  workspace_root: &workspace_root "~"
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
 executors:
   node-executor:
     docker:
       - image: circleci/node:14.17.6-browsers
 jobs:
   build:
-    working_directory: ~/ng-project
+    #working_directory: ~/ng-project
     executor: node-executor
     steps:
-      #- *attach_workspace
+      - *attach_workspace
       - checkout:
           path: ~/ng-project
       - run:
@@ -33,6 +33,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - persist_to_workspace:
+          root: *workspace_root
+          paths: .
   # Linting:
   #   executor: node-executor
   #   steps:
@@ -41,10 +44,9 @@ jobs:
   #         name: Linting
   #         command: npm run lint
   Test:
-    working_directory: ~/ng-project
     executor: node-executor
     steps:
-      #- *attach_workspace
+      - *attach_workspace
       - run: 
           name: Testing
           command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
