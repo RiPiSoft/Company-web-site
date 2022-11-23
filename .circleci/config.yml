@@ -65,5 +65,9 @@ workflows:
       - install-dependencies:
           requires:
             - checkout
-      - Linting
-      - Test
+      - Linting:
+          requires:
+            - install-dependencies
+      - Test:
+          requires:
+            - Linting
