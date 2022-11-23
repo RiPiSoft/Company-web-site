@@ -1,0 +1,64 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+  font-family: 'CarbonPhyber';
+  src: url('assets/fonts/CarbonPhyber.TTF') format('opentype');
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("assets/images/background (Big).png") no-repeat center fixed;
+  background-size: cover;
+}
+
+.waves-light {
+  color: #173F57 !important
+}
+.waves-light:hover {
+  color: rgba(194, 0, 3, 255) !important
+}
+div.middle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+}
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.headline {
+  font-size: 20px;
+  font-weight: bold;
+  color: #173F57 !important;
+  padding-bottom: 5px;
+}
+
+.borderline {
+  border-bottom: 2px solid #173F57 !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: rgba(194, 0, 3, 255) !important;
+}
+
+.bg-dark {
+  background-color: #173F57 !important
+}
+.bg-darkRed {
+  background-color: rgba(194, 0, 3, 255) !important
+}

@@ -1,0 +1,10 @@
+.contactUs {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(194, 0, 3, 255) !important
+}
+
+#map {
+  height: 350px;
+  width: 100%;
+}

@@ -1,0 +1,36 @@
+<header>
+  <div class="container">
+    <div class="d-flex">
+      <div class="mr-auto p-2"><img src="assets/images/Logo (Ripi).png" width="100"></div>
+      <div class="middle p-1"><a href="#" type="button" mdbBtn floating="true" size="lg" class="waves-light p-2" mdbWavesEffect><mdb-icon fab icon="facebook-f" matTooltip="Facebook"></mdb-icon></a></div>
+      <div class="middle p-1"><a href="#" type="button" mdbBtn floating="true" size="lg" class="waves-light p-2" mdbWavesEffect><mdb-icon fab icon="linkedin-in" matTooltip="Linked In"></mdb-icon></a></div>
+      <div class="middle p-1"><a href="#" type="button" mdbBtn floating="true" size="lg" class="waves-light p-2" mdbWavesEffect><mdb-icon fab icon="twitter" matTooltip="Twitter"></mdb-icon></a></div>
+      <div class="middle p-1"><a href="#" type="button" mdbBtn floating="true" size="lg" class="waves-light p-2" mdbWavesEffect><mdb-icon fas icon="comments" matTooltip="Leave comments"></mdb-icon></a></div>
+      <div class="middle p-1"><a href="#" type="button" mdbBtn floating="true" size="lg" class="waves-light p-2" mdbWavesEffect><mdb-icon fas icon="envelope" matTooltip="Send us e-mail"></mdb-icon></a></div>
+      <div class="middle p-1"><a href="#" type="button" mdbBtn floating="true" size="lg" class="waves-light p-2" mdbWavesEffect><mdb-icon fas icon="users" matTooltip="Team"></mdb-icon></a></div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" (click)="Home()">Home</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="Services()">Services</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="Projects()">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="About()">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="Contact()">Contact</a></li>
+      </ul>
+      <ul class="navbar-nav text-muted">
+        <li class="nav-item"><a class="nav-link" (click)="Home()">Register</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="Services()">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<router-outlet></router-outlet>
+<footer>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container collapse navbar-collapse align-items-center justify-content-center">
+      Copyright &copy; by RiPi Soft. All rights reserved.
+    </div>
+  </nav>
+</footer>
