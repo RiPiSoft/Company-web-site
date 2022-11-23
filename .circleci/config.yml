@@ -40,13 +40,13 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
-  Linting:
-    executor: node-executor
-    steps:
-      - *attach_workspace
-      - run: 
-          name: Linting
-          command: npm run lint
+  # Linting:
+  #   executor: node-executor
+  #   steps:
+  #     - *attach_workspace
+  #     - run: 
+  #         name: Linting
+  #         command: npm run lint
   Test:
     executor: node-executor
     steps:
@@ -65,9 +65,9 @@ workflows:
       - install-dependencies:
           requires:
             - checkout
-      - Linting:
-          requires:
-            - install-dependencies
+      # - Linting:
+      #     requires:
+      #       - install-dependencies
       - Test:
           requires:
-            - Linting
+            - install-dependencies
