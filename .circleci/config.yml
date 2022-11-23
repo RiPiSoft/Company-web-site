@@ -12,7 +12,7 @@ executors:
     docker:
       - image: circleci/node:14.17.6-browsers
 jobs:
-  build:
+  Build:
     #working_directory: ~/ng-project
     executor: node-executor
     steps:
@@ -35,13 +35,13 @@ jobs:
       - persist_to_workspace:
           root: *workspace_root
           paths: .
-  # Linting:
-  #   executor: node-executor
-  #   steps:
-  #     - *attach_workspace
-  #     - run: 
-  #         name: Linting
-  #         command: npm run lint
+  Linting:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run: 
+          name: Linting
+          command: npm run lint
   Test:
     executor: node-executor
     steps:
@@ -56,9 +56,10 @@ workflows:
   version: 2
   build-and-test-development:
     jobs:
-      - build
-      #     requires:
-      #       - install-dependencies
-      - Test:
+      - Build
+      - Linting:
           requires:
             - build
+      - Test:
+          requires:
+            - Linting
