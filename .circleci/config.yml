@@ -57,3 +57,13 @@ jobs:
       - run: 
           name: End to End Test
           command: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+workflows:
+  version: 2
+  authenticate-and-deploy:
+    jobs:
+      - checkout
+      - install-dependencies:
+          requires:
+            - checkout
+      - Linting
+      - Test
