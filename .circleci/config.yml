@@ -42,7 +42,7 @@ jobs:
   Test:
     executor: node-executor
     steps:
-      #- *attach_workspace
+      - *attach_workspace
       - run: 
           name: Testing
           command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
