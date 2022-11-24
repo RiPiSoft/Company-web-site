@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "target": "es2018",
+      "module": "es2022",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "sourceMap": true,
+      "isolatedModules": true,
+      "strict": true,
+      "noEmitOnError": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "composite": true,
+      "plugins": [
+        {
+          "name": "ts-lit-plugin",
+          "strict": true
+        }
+      ],
+      "paths": {
+        "@lga/commun": ["./modules/commun/src"],
+      }
+    }
+  }
+  
+  
